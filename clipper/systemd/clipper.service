@@ -1,0 +1,19 @@
+[Unit]
+Description=CLIPPER - Autonomous YouTube Clipper Service
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=hasant
+WorkingDirectory=/home/hasant/clipper
+Environment="PATH=/home/hasant/yt-env/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="CLIPPER_HOME=/home/hasant/clipper"
+ExecStart=/home/hasant/clipper/scripts/runner.sh
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

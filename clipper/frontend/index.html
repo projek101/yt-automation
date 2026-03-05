@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIPPER Dashboard</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 CLIPPER Control Panel</h1>
+        
+        <div class="status-section">
+            <h2>Status</h2>
+            <div id="status">
+                <div class="status-grid">
+                    <div class="status-item pending">
+                        <span class="count" id="pending-count">-</span>
+                        <span class="label">Pending</span>
+                    </div>
+                    <div class="status-item in-progress">
+                        <span class="count" id="in-progress-count">-</span>
+                        <span class="label">In Progress</span>
+                    </div>
+                    <div class="status-item done">
+                        <span class="count" id="done-count">-</span>
+                        <span class="label">Done</span>
+                    </div>
+                    <div class="status-item failed">
+                        <span class="count" id="failed-count">-</span>
+                        <span class="label">Failed</span>
+                    </div>
+                </div>
+                <div class="total">Total: <span id="total-count">-</span></div>
+                <div class="next-link" id="next-link"></div>
+            </div>
+        </div>
+
+        <div class="controls-section">
+            <h2>Controls</h2>
+            <div class="controls">
+                <button onclick="syncNow()" class="btn-sync">🔄 Sync GitHub</button>
+                <button onclick="startJob()" class="btn-start">▶️ Start Job</button>
+                <button onclick="stopJob()" class="btn-stop">⏹️ Stop Job</button>
+                <button onclick="resetStatus()" class="btn-reset">🔁 Reset All</button>
+                <button onclick="refreshStatus()" class="btn-refresh">🔃 Refresh</button>
+            </div>
+        </div>
+
+        <div class="logs-section">
+            <h2>Logs</h2>
+            <div class="logs-container">
+                <pre id="log-output">Loading logs...</pre>
+            </div>
+            <button onclick="refreshLogs()" class="btn-refresh-logs">Refresh Logs</button>
+        </div>
+    </div>
+
+    <script src="/frontend/main.js"></script>
+</body>
+</html>

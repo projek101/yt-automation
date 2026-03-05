@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+requests
+PyGithub
+pandas
+google-api-python-client
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+moviepy
+imageio-ffmpeg
+yt-dlp
+schedule
+pytest
